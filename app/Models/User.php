@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Enums\UserPermission;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -44,11 +45,12 @@ class User extends Authenticatable implements FilamentUser
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'permissions' => UserPermission::class,
         ];
     }
 
     public function canAccessPanel(Panel $panel): bool
     {
-        return 'admin' == $this->permissions;
+        return UserPermission::Admin == $this->permissions;
     }
 }
