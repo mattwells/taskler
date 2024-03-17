@@ -45,8 +45,8 @@ class TaskResource extends Resource
                 Tables\Columns\TextColumn::make('id'),
                 Tables\Columns\TextColumn::make('priority')->sortable(),
                 Tables\Columns\TextColumn::make('title'),
-                Tables\Columns\TextColumn::make('due_at')->sortable(),
                 Tables\Columns\TextColumn::make('assigned.name'),
+                Tables\Columns\TextColumn::make('due_at')->sortable(),
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('assigned.name')

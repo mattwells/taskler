@@ -19,8 +19,8 @@ class TaskFactory extends Factory
         return [
             'title' => fake()->text(30),
             'description' => fake()->text,
-            'due_at' => fake()->optional()->dateTimeThisYear,
-            'priority' => fake()->optional()->numberBetween(1, 10),
+            'due_at' => fake()->optional(.8)->dateTimeThisYear,
+            'priority' => fake()->optional(.8)->numberBetween(1, 10),
             'status' => fake()->randomElement(['pending', 'doing', 'complete']),
         ];
     }

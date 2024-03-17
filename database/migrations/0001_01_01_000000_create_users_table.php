@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
 
-            $table->enum('permissions', ['admin', 'can_edit_others', 'can_view_others']);
+            $table->enum('permissions', ['admin', 'editor', 'viewer', 'self'])
+                ->default('self');
 
             $table->timestamps();
         });

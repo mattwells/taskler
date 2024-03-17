@@ -32,8 +32,8 @@ class UserResource extends Resource
                     ->required(fn (string $operation): bool => $operation === 'create'),
                 Forms\Components\Select::make('permissions')->options([
                     'admin' => 'Administrator',
-                    'can_edit_others' => 'Can Edit Tasks of Other Users',
-                    'can_view_others' => 'Can View Tasks of Other Users'
+                    'editor' => 'Can Edit Tasks of Other Users',
+                    'viewer' => 'Can View Tasks of Other Users'
                 ])
             ]);
     }
