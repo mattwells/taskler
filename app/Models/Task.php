@@ -38,6 +38,11 @@ class Task extends Model
         'status',
     ];
 
+    protected $with = [
+        'author',
+        'assigned',
+    ];
+
     protected function casts(): array
     {
         return [
