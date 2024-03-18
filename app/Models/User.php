@@ -4,13 +4,20 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Enums\UserPermission;
-use Filament\Models\Contracts\FilamentUser;
-use Filament\Panel;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable implements FilamentUser
+/***
+ * @property int $id
+ * @property string $name
+ * @property UserPermission $permissions
+ * @property Carbon $createdAt
+ * @property Carbon $updatedAt
+ * @property Carbon $deletedAt
+ */
+class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
@@ -47,10 +54,5 @@ class User extends Authenticatable implements FilamentUser
             'password' => 'hashed',
             'permissions' => UserPermission::class,
         ];
-    }
-
-    public function canAccessPanel(Panel $panel): bool
-    {
-        return UserPermission::Admin == $this->permissions;
     }
 }

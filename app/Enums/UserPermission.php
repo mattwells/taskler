@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum UserPermission : string
+enum UserPermission: string
 {
     case Admin = 'admin';
     case Editor = 'editor';
