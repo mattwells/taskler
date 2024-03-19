@@ -8,9 +8,11 @@ The application is purely for my own learning and is not intended to be used in 
 
 ## Demo Quick Start
 
-Download the repository locally and in the new folder run the commands:
+To download and install run the following commands in a terminal:
 
 ```bash
+git clone https://github.com/mattwells/taskler.git
+cd taskler
 composer install
 cp .env.example .env
 php artisan key:generate
