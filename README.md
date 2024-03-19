@@ -6,9 +6,10 @@ without a full page reload.
 
 The application is purely for my own learning and is not intended to be used in a live environment!
 
-## Demo Quick Start
+## Quick Start
 
-To download and install run the following commands in a terminal:
+With GIT, PHP and Composure installed, run the following commands in a terminal to get Taskler
+up and running:
 
 ```bash
 git clone https://github.com/mattwells/taskler.git
@@ -37,7 +38,7 @@ login email addresses:
 
 ## Event Usage
 
-The `Task` model has an observer that is listening for a  created or updated. If the task
-is updated with a new person assigned to it that user will be sent an email, which can be 
-viewed in the log. I have set the default queue driver to sync for testing but will work 
-with any queue service.
+The `Task` model has an observer that is listening for a created or updated event attached using
+a PHP Attribute. If the task is updated with a new person assigned to it that user will be sent 
+an email, which can be viewed in the log. I have set the default queue driver to `sync` for 
+testing, but it will work with any queue service.
