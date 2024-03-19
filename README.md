@@ -8,9 +8,13 @@ The application is purely for my own learning and is not intended to be used in 
 
 ## Demo Quick Start
 
-Download the repository locally and in the folder run the commands:
+Download the repository locally and in the new folder run the commands:
 
 ```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+touch database/database.sqlite
 php artisan migrate --seed
 php artisan serve
 ```
